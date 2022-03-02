@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 250px;
+        height: 250px;
+        background-color: yellow;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="checkbox" />
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      document.addEventListener('wheel', event => {
+        console.log('scrolling');
+        event.preventDefault(); // 빠른 이벤틍이기 때문에 기본적으로 방생하는 동작을 취소하지 못한다. 하지만 콘솔창에 스크롤 되고있다고 알려준다. 
+        // EventListener 는 passive (수동적) 으로 작동한다. 
+        // 정말 취소하고 싶으면 options 을 추가할 수 있다. 
+      } // , {passive: false} // 이 리스너는 active 상태가 된다 (스크롤안됨)  물론 이거 별로 안좋음 
+      ); 
+      
+      const checkbox = document.querySelector('input');
+      checkbox.addEventListener('click', event => {
+        // long
+        console.log('checked');
+        event.preventDefault(); // 브라우저에서 기본적으로 발생하는 동작을 취소시켜준다. 
+      });
+    </script>
+  </body>
+</html>

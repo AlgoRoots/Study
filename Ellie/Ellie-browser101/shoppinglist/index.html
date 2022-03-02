@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500&display=swap" rel="stylesheet">
+    <title>Shopping list</title>
+    <script src="/main.js" defer></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" 
+    crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <section class="list">
+        <div class="head">
+            <h1 class="headTitle">Shopping list</h1>
+        </div>
+
+        <div class="count">
+            <span class="TotalItems">Total Items(00)</span>
+            <span class="LeftItems">Items left(00)</span>
+        </div>
+
+
+        <!-- Section Product lists -->
+
+        
+        <ul class="items">
+            <!-- <li class="item__row">
+                <div class="item">
+                    <div class="item__name ">Bread | 1ea</div> 
+                    <div class="icons">
+                        <button class="iconcircle check"><i class="fas fa-check"></i></button>
+                        <button class="iconcircle bin"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </li>  -->
+
+            <!-- <li class="item__row_Done">
+                <div class="item_Done">
+                    <div class="item__name_Done">Bread | 1ea</div> 
+                    <div class="icons">
+                        <button class="iconcircle_Done   "><i class="fas fa-check checkIcon_Done"></i></button>
+                        <button class=" iconcircle_Done " ><i class="fas fa-trash fas_Done"></i></button>
+                    </div>
+                </div>
+            </li>   -->
+        </ul> 
+       
+     
+
+        <!-- Bottom -->
+        <div class="bottom">
+            <form class="addItem">
+                <input  class="addText" type="text" autofocus="true" placeholder="Add item"></input> 
+                <input class="addNum" type="number" min="1" step="1" value="1"> 
+            </form>
+            
+            <button class="addBtn"><i class="fas fa-plus"></i></button>
+        </div>
+    </section>
+</body>
+</html>

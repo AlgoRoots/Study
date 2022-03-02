@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    <script defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    < class="container">
+        <div class="form-group">
+
+            <p>상품선택</p>
+            <select class="form-control" id="option1">
+            <option>모자</option>
+            <option>셔츠</option>
+            <option>바지</option>
+            <option>치마</option>
+            </select>
+
+            <div class="size-select">
+                    <p> Select the size </p>
+                    <select class="form-control" id="option2">
+                    <!-- <option>95</option>
+                    <option>100</option>
+                    <option>105</option> -->
+                    </select>
+            </div>
+        </div>
+        
+
+        <script>
+            let sizeSelect = document.getElementsByClassName('size-select')[0];
+            let select =  document.getElementById('option1');
+            let option2 =  document.getElementById('option2');
+            // form 관련 이벤트 input/ chnage
+            // $('어떤인풋').on('click', function(){})
+            // $('어떤인풋').on('input', function(){})
+            // $('어떤인풋').on('change', function(){}) > 가장많이쓰임
+
+
+            // selectVal.addEventListener('change', function(){
+            //        //만약 사용자가 선택한 값이 셔츠인 경우에 밑에 그 ui를 보여줌
+            //     if  (selectVal.value == '셔츠') {
+            //     sizeSelect.style.display = 'block';
+            //     } else {
+            //     sizeSelect.style.display = 'none';    
+            //     }
+            // })
+
+            let element = document.querySelector('#option2');
+            //  반복문으로 코드를 단축하면? 
+            let pantsSize = [26, 28, 30, 32, 34, 36]
+            let skirtSize = [24, 26, 28, 30, 32, 'free']
+            
+            select.addEventListener('change', function(){
+                if  (select.value == '셔츠') {
+                    option2.innerHTML = '';
+                    let template = `
+                                <option>95</option>
+                                <option>100</option>
+                                <option>105</option> `;
+                    element.insertAdjacentHTML('beforeend', template);
+                    sizeSelect.style.display = 'block';
+                    
+                    } else if (select.value == '바지'){
+                        option2.innerHTML = '';
+
+                        for (let i = 0; i < 6; i++){
+                        let template = `<option>${pantsSize[i]}</option>`;
+                        element.insertAdjacentHTML('beforeend', template);
+                        sizeSelect.style.display = 'block';
+                        }
+
+                    } else if (select.value == '치마'){ 
+                        option2.innerHTML = '';
+
+                        //.forEach(funtion(i)) 콜백함수 
+                        // > i 값은 치마 사이즈 안에 있는 하나하나의 데이터
+                        // skirtSize.forEach(function(i){
+                            // console.log(i)
+                        //}):
+
+                        // skirtSize.forEach((i) => {
+                            // console.log(i)
+                        //}); 이 두개는 같다. => (Arrow Function 이라 함)
+                        skirtSize.forEach((i) => {
+                        let template = `<option>${i}</option>`;
+                        element.insertAdjacentHTML('beforeend', template);
+                        sizeSelect.style.display = 'block';
+                        })  
+                    }
+                    else {
+                    sizeSelect.style.display = 'none';    
+                    }
+                });
+
+                // tip! 백틱기호 안에 변수 넣으려면 '문자' + 변수 + '문자' 였는데
+                // 신 문법에서 ${변수} 로 가능해짐
+
+    
+        // jQuery
+        // $('#option1').on('change', function(){
+        //     if ( $('#option1').val() == '셔츠' ) {
+        //         var 템플릿 = '<option>95</option><option>100</option><option>105</option>';
+        //         $('#option2').append(템플릿);
+        //         } else {
+        //             var 템플릿 = '<option>28</option><option>30</option><option>32</option>';
+        //             $('#option2').append(템플릿);
+        //         }
+        // });
+
+
+        // 만약 사이즈 option이 매우 많으면? 
+
+
+        </script>
+</body>
+</html>

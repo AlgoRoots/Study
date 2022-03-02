@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordinates</title>
+    <style>
+        body{
+            background-color: black;
+            /* overflow: hidden; */
+      
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            text-align: right;
+            top: 20px;
+        }
+
+        .box { 
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+
+
+        .box2 { 
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+            
+        }
+
+
+    </style>
+
+</head>
+<body>
+        
+    <nav class="btn">
+        <button class="scrollBy">Scroll by 100px</button>
+        <button class="scrollTo">Scroll to 100px</button>
+        <button class="scrollBox2">Scroll into box2</button>
+    </nav>
+
+    <div class="boxContainer">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div> 
+        <div class="box"></div>
+        <div class="box2"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div> 
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div> 
+    </div>
+
+    <script>
+
+        const box2 = document.querySelector('.box2');
+
+        // box2.addEventListener('click', function(e){
+        //     console.log(DOMRect);
+        //     const clientCursorX = e.clientX;
+        //     const clientCursorY = e.clientY;
+        //     const pageCursorX = e.pageX;
+        //     const pageCursorY = e.pageY;
+        //     console.log('client: ', `${clientCursorX}, ${clientCursorY}`);
+        //     console.log('page: ', `${pageCursorX}, ${pageCursorY}`);
+        
+        //     })
+
+
+        box2.addEventListener('click', (e) => {
+            const DOMRect = box2.getBoundingClientRect();
+            console.log(DOMRect);
+            console.log(`client: ${e.clientX}, ${e.clientY}`);
+            console.log(`page: ${e.pageX}, ${e.pageY}`);
+        })
+
+        const scrollBy = document.querySelector('.scrollBy');
+        const scrollTo = document.querySelector('.scrollTo');
+        const scrollBox2 = document.querySelector('.scrollBox2');
+
+        scrollBy.addEventListener('click', () => {
+            window.scrollBy(0, 100);
+            window.scrollBy({top: 100, left: 0, behavior: 'smooth' });
+        })
+
+        scrollTo.addEventListener('click', () => {
+            window.scrollTo(0, 100);
+        })
+        
+        scrollBox2.addEventListener('click', () => {
+            box2.scrollIntoView();
+        })
+        
+    </script>
+</body>
+</html>

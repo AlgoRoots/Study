@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        background-color: black;
+        text-align: center;
+      }
+      section {
+        width: 50%;
+        margin: 50px auto;
+        background-color: brown;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      img {
+        z-index: 100;
+        will-change: opacity;
+      }
+      h1,
+      h3,
+      span {
+        color: white;
+      }
+
+      .form {
+      
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="img/avatar.png" alt="avatar" />
+      <h1 id="brand">Dream Coding</h1>
+      <!-- Hello World comment -->
+      <h3>Don't forget to code your dream</h3>
+    </section>
+    <!-- 2 gvhjjello World comment -->
+    <span>Hello World!</span>
+    <div class="size-select">
+      <p> Select the size </p>
+      <select class="form">
+       <!-- <option>95</option>
+      <option>100</option>
+      <option>105</option>  -->
+      </select>
+</div>
+
+    <script>
+      const section = document.querySelector('section');
+      const h2 = document.createElement('h2');
+      h2.setAttribute('class', 'title'); // < h2 class="title"><h2>
+      h2.textContent = 'Tis is a title'; // < h2 class="title">Tis is a title'<h2>
+      const h3 = document.querySelector('h3');
+      // h3 전에 넣게 해주는것.  appendchil
+      section.insertBefore(h2, h3);
+
+
+
+    // option 은 이 방법으로 어떻게 넣지?
+    // const form  = document.querySelector('form');                 // Create a <li> node
+    //   const options = [ '95', '100', '105'];      // Create a text node
+    //   form.appendChild(options);                              // Append the text to <li>
+    //  // Append <li> to <ul> with id="myList"
+
+
+      //   window.onload=function(){
+      // for(let i=1; i<=5; i++){
+      // let option = document.createElement("option");
+      // option.value = i;
+      // option.text = i;
+      // form.appendChild(option);
+      // }
+      //   }
+
+
+
+
+
+      // const form = document.querySelector('form');
+      // const options = [ '95', '100', '105'];
+
+      // options.forEach(function(element, key) {
+      //   form[key] = new Option(element,key);
+      // });
+  
+    </script>
+  </body>
+</html>

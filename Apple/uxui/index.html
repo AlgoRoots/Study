@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script defer src="src/main.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- nav menu -->
+    <div class="nav-bar" id="nav-bar">
+        <h4 class="logo"><a href="index.html" class="logo">AlgoRoot</a></h4>
+        <button class="nav-btn"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <ul class="nav-list-group">
+        <li class="list-group-item">
+            <a href="product.html">Products</a> </li>
+        <li class="list-group-item">About us</li>
+        <li class="list-group-item">FAQ</li>
+        <li class="list-group-item">Contact us</li>
+    </ul>
+
+    <!-- Card layout -->
+    <div class="card">
+        <!-- Card Body -->
+        <div class="card-body">
+            <h1 class="card-title titleMotion">Welcome to our store..</h1>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo impedit aperiam ullam
+                consequatur cumque, cum optio labore quam voluptate iste ipsum hic eaque nisi officiis, omnis quidem
+                quis quae iusto.</p>
+            <button class="btn" id="btn">Sign in</button>
+        </div>
+    </div>
+
+    <!-- Login box -->
+    <div class="black-bg slide-down" id="black-bg">
+        <div class="white-bg">
+            <div class="LoginBox">
+                <p class="signIn">Sign in to AlgoRoot Store</p>
+                <!-- Login form -->
+                <form id="form" action="login.php">
+                    <div class="form-group">
+                        <div class="email">
+                            <input type="email" class="form-control" id="email" name="Email" placeholder="Email">
+                            <p class="email-alert-enter">Enter an email</p>
+                            <p class="email-alert-invaild">Enter a vaild email</p>
+
+                        </div>
+                        <div class="pw">
+                            <input type="password" class="form-control" id="pw" name="Password" placeholder="Password">
+                            <p class="pw-alert-enter">Enter a password</p>
+                            <p class="pw-alert-invaild">Password must include: At leaset <b>one capital letter</b></p>
+
+                        </div>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Sign in</button>
+                    <button type="button" class="btn close-btn">Cancle</button>
+                </form>
+            </div>
+            <!-- Login Fail notice -->
+            <div class="loginFail" id="loginFail-alert">
+                <p class="loginFail__text">Couldn't find your account.<br> Please try again.</p>
+                <button class="btn loginFail__closeBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Image Slide -->
+
+    <div class="slide">
+        <div class="slideImg">
+            <div class="slideContainer">
+                <div class="slideBox slideImg-1">
+                    <img src="img/1.jpg" alt="">
+                </div>
+                <div class="slideBox  slideImg-2">
+                    <img src="img/6.jpg" alt="">
+                </div>
+                <div class="slideBox slideImg-3">
+                    <img src="img/5.jpg" alt="">
+                </div>
+            </div>
+
+            <button class="slideNext-L"><i class="fas fa-chevron-left"></i></button>
+            <button class="slideNext-R"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slidebtnNum">
+            <button class="slide-1">1</button>
+            <button class="slide-2">2</button>
+            <button class="slide-3">3</button>
+        </div>
+    </div>
+
+
+    <!-- Tap function -->
+
+    <div class="tabBody">
+        <ul class="tabLists">
+            <li class="tabBtn" id="tabBtn" data-id="0">Products</li>
+            <li class="tabBtn active" id="tabBtn" data-id="1">Information</li>
+            <li class="tabBtn" id="tabBtn" data-id="2">Shipping</li>
+        </ul>
+
+        <div class="tabContent">
+            <p> 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel similique,
+                minus nostrum ea officiis aliquid porro saepe sequi quas quidem modi sapiente consequuntur architecto,
+                commodi ratione accusamus magni, sunt dolorem?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos delectus laboriosam pariatur
+                distinctio praesentium animi consectetur soluta alias porro iure! Quia minus enim, officia vitae
+                fuga voluptatum eos optio quos! </p>
+        </div>
+
+        <div class="tabContent show">
+            <p> 2Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Debitis saepe voluptas id rerum, doloribus molestias nostrum
+                voluptate itaque 2Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Debitis saepe voluptas id rerum, doloribus molestias nostrum
+                voluptate itaque </p>
+        </div>
+
+        <div class="tabContent">
+            <p> 33 Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quis unde voluptate aliquam ut
+                maxime eos iste libero eligendi nemo illo? Repellat est atque maiores incidunt consequuntur debitis!
+                Nostrum, numquam.
+                Aut repellat adipisci pariatur facilis recusandae totam nam magnam iste ut saepe obcaecati vel esse
+                fugiat facere ipsum corrupti, odit voluptate omnis error earum temporibus tempora! Doloribus adipisci
+                assumenda nam?
+        </div>
+    </div>
+
+
+    
+<!-- Position Sticky  -->
+    <!-- <div></div>
+    <div class="stickyBG">
+        <div class="stickySection">
+            <div class="stickyImg">
+                <img src="img/2.jpg" width="100%">
+            </div>
+            <div style="clear : both"></div>
+            <div class="sitckyText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Nulla maiores vero laborum cum animi, illo nemo? Hic suscipit, nobis repudiandae
+                veritatis quia impedit maiores porro ea in doloribus tempore at.
+            </div>
+
+            <div style="clear : both"></div>
+            <div class="sitckyText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Nulla maiores vero laborum cum animi, illo nemo? Hic suscipit, nobis repudiandae
+                veritatis quia impedit maiores porro ea in doloribus tempore at.
+            </div>
+            <div style="clear : both"></div>
+            <div class="sitckyText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Nulla maiores vero laborum cum animi, illo nemo? Hic suscipit, nobis repudiandae
+                veritatis quia impedit maiores porro ea in doloribus tempore at.
+            </div>
+        </div>
+        
+            
+            <div class="text">Meet the first Triple Camera System</div>
+    </div> -->
+ 
+
+<!-- Card Section -->
+<div class="cardBG">
+    <div class="cardTitle">Best Sparkling Water</div>
+    <div class="cardBox">
+        <img src="img/card_1.png" alt="">
+    </div>
+    <div class="cardBox">
+        <img src="img/card_2.png" alt="">
+    </div>
+    <div class="cardBox">
+        <img src="img/card_3.png" alt="">
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

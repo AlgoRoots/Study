@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click me</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      function Container() {
+        const data = React.useState(0);
+        console.log(data);
+        return (
+          <div>
+            <h3>Total clicks : 0</h3>
+            <button>Click me</button>
+          </div>
+        );
+      }
+      ReactDOM.render(<Container />, root);
+
+      /*       function Title() {
+        return (
+          <h3 id="title" onMouseEnter={() => console.log("Mouse enter")}>
+            Hello I'm a h3
+          </h3>
+        );
+      }
+      const Button = () => (
+        <button
+          style={{ backgroundColor: "tomato" }}
+          onClick={() => console.log("im clicked")}
+        >
+          Click me
+        </button>
+      ); */
+
+      /*     const h3 = React.createElement("h3",
+            {
+              id : "title",
+              onMouseEnter: () => console.log('Mouse Enter'),
+            },
+            "Hello I'm a h3"
+          );
+          const btn = React.createElement("button",
+            {
+              onClick: () => console.log('I am clicked'),
+              style: {
+                backgroundColor: "tomato",
+              }
+            },
+            "click me"
+          ); */
+
+      //const container = React.createElement("div", null, [Title, Button]);
+    </script>
+  </body>
+</html>

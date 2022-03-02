@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sytle.css">
+    <title>Youtube Mobile</title>
+    <script
+      src="https://kit.fontawesome.com/2d323a629b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fab fa-youtube"></i>
+            <span class="title">Youtube</span>
+        </div>
+
+        <div class="icons">
+          <button><i class="fas fa-search"></i> </button>
+          <button><i class="fas fa-ellipsis-v"></i></button>
+        </div>
+    </header>
+
+    <!-- Video Plyer -->
+    <section class="player">
+      <video src="https://youtu.be/67stn7Pu7s4" controls></video>
+    </section>
+
+    <!-- Video info & Up next -->
+    <div class="infoAndUpNext">
+      <!-- Main Title  -->
+      <section class="maintitle">
+        <!-- Main Info -->
+        <div class="maininfo">
+            <!-- Hashtags --> 
+            <ul class="hashtags">
+              <li>#Algoroot</li>
+              <li>#Frontend</li>
+              <li>#Coading</li>
+            </ul>
+
+            <!-- Title And Button -->
+            <div class="TitleAndBtn">
+              <span class="title clamp">
+                AlgoRoot Youtube Clone with Ellie 알고루트 유튜브 클론 연습
+                프론트엔드 개발자 연습하기: HTHML, CSS, Jacascript 파해치기, ALGOROOT 알고루트 유투브 클론연습
+                
+              </span>
+              <button class="moreBtn">
+                <i class="fas fa-caret-down"></i>
+              </button>
+          </div>
+            <!-- Main View and Upload time -->
+            <span class="views">1M views 1 month ago</span>
+        </div>
+
+        <!-- Actions -->
+        <ul class="actions">
+          <li>
+            <button>
+              <i class="active fas fa-thumbs-up"></i><span>1K</span>
+            </button>
+          </li>
+          <li>
+            <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-share"></i><span>Share</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-plus"></i><span>Save</span></button>
+          </li>
+          <li>
+            <button>
+              <i class="fab fa-font-awesome-flag"></i><span>Report</span>
+            </button>
+          </li>
+        </ul>
+
+        <!-- Chanel Description -->
+        <div class="channel">
+          <!-- Metadata Profile -->
+          <div class="metadata">
+            <img src="image/algoroot_logo.png" alt="" class="id-image">
+            <div class="id-contents">
+              <h2>AlgoRoot 알고루트</h2>
+              <span class="subscribers">1M subscribers</span>
+            </div>
+          </div>
+          <!-- Subscribe Btn -->
+          <button class="subscribe">subscribe</button>
+        </div>
+      </section>
+
+      <!-- UpNext -->
+      <section class="upNext">
+        <!-- Up Next text -->
+        <div class="upnext__text">Up next</div>
+        <!-- Next Videos -->
+        <ul>
+          <li class="nextvideo">
+            <div class="img"><img src="image/1.jpg" alt="thumbsnatil-1" class="nextthumbsnail"></div>
+            <div class="nextInfo">
+              <h2 class="upnext-title">AlgoRoot- How to improve time-management skills 시간 효율적으로 쓰는 법</h2>
+              <h3 class="upnext-id">AlgoRoot알고루트</h3>
+              <span class="views">928K views</span>
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+        </ul>
+        <ul>
+          <li class="nextvideo">
+            <div class="img"><img src="image/2.jpg" alt="thumbsnatil-1" class="nextthumbsnail"></div>
+            <div class="nextInfo">
+              <h2 class="upnext-title">AlgoRoot 비전공자자 독학하기. 쉽지는 않으나 충분히 할 수 있어요!</h2>
+              <h3 class="upnext-id">AlgoRoot알고루트</h3>
+              <span class="views">928K views</span>
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+        </ul>
+        <ul>
+          <li class="nextvideo">
+            <div class="img"><img src="image/3.jpg" alt="thumbsnatil-1" class="nextthumbsnail"></div>
+            <div class="nextInfo">
+              <h2 class="upnext-title">AlgoRoot- 옳은 길을 걷는 일</h2>
+              <h3 class="upnext-id">AlgoRoot알고루트</h3>
+              <span class="views">928K views</span>
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+        </ul>
+      </section>
+    </div>
+</body>
+</html>

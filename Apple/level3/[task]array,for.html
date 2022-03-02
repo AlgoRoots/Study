@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // for, array 이용해서 이름찾기
+        
+        let 출석부 = ['흥민', '영희', '철수', '재석'];
+
+        function 이름찾기(name){
+            for(let i = 0; i < 4; i++){ 
+                if ( name == 출석부[i]){
+                    console.log('있어요.')
+                }
+            }
+        }
+        이름찾기('철수');
+
+        // 구구단 콘솔창에 출력하기
+        
+
+        for ( let z = 2; z < 10; z++){
+            console.log( z + '단');
+            for ( let i = 1; i < 10; i++){
+                console.log( z + '*' + i + '=' + (z * i) );
+            }
+        }
+
+        // (실적12월 + 실적5게월)/6 = 평균월별판매량
+        // 실적12월 = (6 * 평균월별판매량) - 실적5개월
+
+        // 12월 평균실적 구하기 
+
+        function 목표량계산기(판매실적어레이, 평균월별판매량){
+
+            let 실적5개월 = 0; 
+            for (let i=0; i < 5; i++){
+            실적5개월 = 실적5개월 + 판매실적어레이[i]
+        }
+            실적12월 = (6 * 평균월별판매량) - 실적5개월;
+            console.log(실적12월);
+         };
+
+        // 응용 : forEach 사용하기
+
+        function 목표량계산기(판매실적어레이, 평균월별판매량){
+            let 실적5개월 = 0;
+            판매실적어레이.forEach( i => {
+                실적5개월 += i;
+            })
+            실적12월 = (6 * 평균월별판매량) - 실적5개월;
+            console.log('12월에는 ' + 실적12월 + '개를 팔아야합니다.');
+        };
+        
+    </script>
+</body>
+</html>

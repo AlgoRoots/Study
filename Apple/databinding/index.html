@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+<h2>응용 1 </h2>
+<h4 id="title"> Product title</h4>
+<p id="content"> Product content</p>
+<p id="color"> Product color</p>
+
+<br>
+<h2> 응용 2 Array 안에 Object 가 두개일 때 </h2>
+<h4 id="title2"> Product title </h4>
+<p id="content2"> Product content</p>
+<p id="color2"> Product color</p>
+    
+<script>
+
+// 민준쿤은 은행에 예금을 하러 갔는데 예금 금액에 따라 이율이 달라지는 것을 보고 크게 당황했습니다. 
+
+// 예금액이 5만원 미만이면 이율이 연 15퍼센트,
+
+// 예금액이 5만원 이상이면 이율이 연 20퍼센트라고 합니다. 
+
+// (실은 높은 이율에 당황했습니다)
+
+// 그래서 민준이는 2년 후의 예금액을 자동으로 계산해주는 기계를 자바스크립트로 만들려고하는데 어떻게 코드를 짜면 될까요? 
+
+// let 예금액 = 60000;
+// let 미래예금액 = 0;
+
+// function 미래예금액('60000'){
+//     2*예금액 + 2*(예금액*0.15) == 미래예금액;
+// }
+
+// console.log(미래예금액)
+
+
+let 예금액 = 60000;
+let 미래예금액 = 0;
+
+if (예금액 >= 50000 ){
+    미래예금액 = 예금액 * 1.2 * 1.2 ;
+} else {
+    미래예금액 = 예금액 * 1.15 * 1.15;
+}
+
+console.log(미래예금액)
+
+
+
+// 처음마신 커피양에 3분의 2만 리필하고 또 리필양에 따라서 두번째리필에도 3분의 2만 리필해준다.
+
+let 처음커피양 = 360;
+let 마신커피 = 0;
+let 리필양 = (처음커피양 * 2/3);
+
+마신커피 = 처음커피양 + 리필양;
+
+리필양 = (리필양 * 2/3);
+마신커피 = 마신커피 + 리필양;
+
+console.log(마신커피)
+
+
+
+// 정규식 : 문자를 검사하고 싶을 때 사용한다. 
+// ex > /abc/.test('abcdef') > 지금 abcdef 라는 문자에 abc라는 문자가 있나요?
+
+// 대소문자 포함 A-z 까지
+//[A-z]/.test('s');
+
+// \S > 특수문자 포함 모든 
+// /\S/.test(''s'); 
+// 모든문자 다음에 골뱅이 
+// /\S@/.test('t@');
+
+// 이메일 정규식   .은 \.로 표현
+// /\S+@\S+\.\S+/.test('dfdf@dfd.com');
+
+
+
+
+
+        // 1부터 369 사이의 자연수에서 3으로 나누어 0으로 떨어지면 '박수' 아니면 '통과' 라고 출력한다.
+
+       
+        
+        function 삼육구게임(n) {
+            if ( n % 3 == 0) {
+                console.log('박수');
+            } else {
+                console.log('통과');
+            }
+        }
+
+        // 9로 나누어 0으로 되면 박수두번치고 3으로 나누어 0으로되면 박수를 한번친다. 둘다해당이 안되면 통과
+
+        function 삼육구게임(n) {
+            if ( n % 9 == 0) {
+                console.log('박수x2');
+            } else if (n % 3 == 0) {
+                console.log('박수');
+            } else {
+                console.log('통과');
+            }
+        }
+        
+        // 윈도우에 창띄워줘게 해서 입력 가능하게 해줌
+        // let n = prompt("숫자를 입력하세요.");
+
+        // if (n % 3 == 0) {
+        // console.log("짝");
+        // } else {
+        // console.log(n);
+        // }
+        
+        // 369 게임을 하려면? 3, 6, 9 에 박수 한번 33 , 66, 99에 박수 두번
+
+       // function 삼육구게임(n) {
+        // if (n ) {
+        //  if (n % 10 == 3 || n % 10 == 6 || n % 10 == 9) {
+        //      console.log('박수');
+        //  } else if 
+        //  }
+ 	
+        
+
+
+        function 삼육구게임(num) {
+
+// 그냥
+
+            if(num % 10 == 3 || num % 10 == 6 || num % 10 == 9) {
+                console.log('박수');
+            } else {
+                console.log('통과');
+            }
+
+
+
+// 박수여러번
+
+           let 박수 = '';           
+
+            for(let i = 0; i < String(num).length; i++) {
+                if(String(num)[i] == '3' || String(num)[i] == '6' || String(num)[i] == '9') {
+                    박수 = 박수 + '박수';
+                }
+            }
+            console.log(박수 == '' ? '통과' : 박수);
+
+
+
+// for없이 박수여러번
+
+let 박수2 = String(num).replace(/[3,6,9]/g,"박수").replace(/[0-9]/g,"");
+
+console.log(박수2 == '' ? '통과' : 박수2);
+
+}
+
+// // var 은 범위가 function
+// var 나이 = 20;
+// 나이 = 21; // 할당 됨
+
+// // let 재선언이 불가능한 변수를 만들 때
+// // 범위가 {}
+// let 나이 = 20;
+
+// // const 재선언이 불가능한 변수를 만들 때 
+// // 재 할당이 불가능한 변수를 만들 때
+// // 범위가 {}
+// const 나이 = 20;
+// 나이 = 21; // 할당 안됨
+
+// Hoisting 
+        
+
+// Array Object 여러가지 자료를 한 곳에 저장하고 싶을 때
+// array [] 대괄호로 생성, 자료들을 콤마로 구분, [0]으로 자료 출력
+let Array = [ 'BMW', '520', 'Tesla' , [1,2,3]];
+console.log(Array);
+console.log(Array[0]);
+
+// object {} 중괄호로 생성, 자료(value)들을 콤마로 구분, 자료 왼쪽(key)에 이름을 써줘야한다. 
+let Object = { brand : 'BMW', model : 520, color : ['blue', 'white'], type : {big : 'large', small : 'medium'}}
+console.log(Object);
+console.log(Object.color);
+console.log(Object.type);
+
+
+
+// 응용== 데이터바인딩
+// document.querySelector('title') = Array[0];
+document.getElementById('title').innerHTML = Array[0];
+// jQery 로 했을 시 
+$('#content').html(Array[1]);
+// Object 로 꺼낼 시
+document.getElementById('color').innerHTML = Object.color;
+
+// 이런 작업을 데이터바인딩이라 한다. 
+
+
+// 응용 2 
+let data = [ { brand : 'bmw'}, { model : 520} ];
+
+document.getElementById('title2').innerHTML = data[0].brand;
+$('#content2').html(data[1].model);
+
+
+
+
+</script>
+
+
+</body>
+</html>
+

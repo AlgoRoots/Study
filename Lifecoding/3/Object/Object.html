@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var Link= {
+            setColor:function(color){
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length){
+                alist[i].style.color = color;
+                i = i + 1;
+            }
+            }
+        }
+        // document : 객체, querySelctor : 함수이면서 객체에 소속되어있기 때문에 Method 라고 한다. //
+
+        // 소속된 변수의 값으로 함수를 지정할 수 있고, 이로 객체에 소속된 함수(Method)를 만들 수 있다. //
+        // 객체에 소속된 변수 = Property //
+        var Body = {
+            setColor:function(color){
+            document.querySelector('body').style.color = color;
+            },
+            setBGcolor:function(color){
+            document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+       
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+                Body.setBGcolor('black');
+                Body.setColor('white');          
+                self.value = 'day';
+
+                Link.setColor('powderblue');
+            } else {
+                Body.setBGcolor('white');
+                Body.setColor('black');
+                self.value = 'night';
+
+                Link.setColor('blue');
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>파일을 쪼개서 정리정돈하기 </h1> <br>
+    <h2><a href="index.html">WEB Javascript 함수 function </a></h2>
+
+    <input id="night_day" type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+
+    <ol>
+    <li><a href="1.html">HTML</a></li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="3.hyml">Javascript</a></li>
+    </ol>
+  
+
+    <h1>Function</h1>
+    <h2>Basic</h2>
+        <ul>
+            <script>
+                function two() {
+                    document.write('<li>2-1</li>');
+                    document.write('<li>2-3</li>');  
+                }
+                document.write('<li>1</li>');
+                two();
+                two();
+                document.write('<li>3</li>');  
+                two();
+                two();  
+                
+            </script>
+        </ul>
+
+    <h2>입력 - Parameter 매개변수 & Argument 인자</h2>
+        <script>
+            function onePlusOne (){
+                document.write(1+1+'<br>');
+            }
+            onePlusOne();
+            function sum(left, right){
+                document.write(left+right+'<br>');
+            }
+            sum(2,3); // 5
+            sum(3,4); // 7
+        </script>
+
+    <h2>Return 출력</h2>
+        <script>
+            function sum2(left, right){
+                return left+right;
+            }
+            document.write(sum2(2,3)+'<br>');
+            document.write('<div style="color:red;">'+sum2(2,3)+'</div>');
+            document.write('<div style="font-size:3rem;">'+sum2(2,3)+'</div>');
+            
+        </script>
+
+</body>
+</html>

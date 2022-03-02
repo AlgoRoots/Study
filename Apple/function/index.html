@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">
+        <p>Alert Box</p>
+        <button onclick="closeAlert">Close</button>
+    </div>
+    <button onclick="openAlert">Button</button>
+
+    <script>
+
+        //  funcion : 긴 코드를 깔끔하게 한 단어로  축약 가능 
+        function openAlert(){
+            document.getElementById('alert').style.display= 'block';
+        }
+
+        function closeAlert(){
+            document.getElementById('alert').style.display = 'none'
+        }
+
+    </script>
+</body>
+</html>c

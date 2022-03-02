@@ -1,0 +1,304 @@
+:root {
+  /* Color */
+  --white-color: #fffff;
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
+
+  /* Font-Size */
+  --font-large: 20px;
+  --font-regular: 16px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+
+  /* Size */
+  --spacing: 12px;
+  --spacing-small: 6px;
+  --avatar-size: 36px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+}
+
+li {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+/* .infoAndUpNext button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+}
+
+.actions button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+} */
+
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: var(--spacing);
+}
+
+header .logo {
+  font-size: var(--font-large);
+}
+
+header .logo i {
+  color: var(--red-color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--spacing);
+}
+
+header .icons button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  color: var(--white-color);
+}
+
+/* Video plyer */
+.player {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+/* Info and Up Next */
+.infoAndUpNext .maintitle{
+  padding: var(--spacing);
+}
+
+/* Maintitle */
+.maintitle .maininfo .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+}
+
+.maintitle .maininfo .hashtags li {
+  margin-right: var(--spacing);
+}
+
+.maintitle .maininfo .TitleAndBtn {
+  display: flex;
+}
+
+.maintitle .maininfo .TitleAndBtn .title {
+  font-size: var(--font-medium);
+  margin-right: var(--spacing);
+}
+
+.maintitle .maininfo .TitleAndBtn .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.maintitle .maininfo .TitleAndBtn .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out;
+}
+
+.maintitle .maininfo .TitleAndBtn .moreBtn.clicked {
+  transform: rotate(180deg);
+}
+
+.maintitle .maininfo .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/* Action Buttons */
+.maintitle .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--spacing) 0;
+}
+
+.maintitle .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.maintitle .actions i {
+  padding-bottom: var(--spacing-small);
+  margin: 0 auto;
+  font-size: var(--font-regular);
+}
+
+.maintitle .actions i.active {
+  color: var(--blue-color);
+}
+
+/* Channnel description */
+.maintitle .channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.maintitle .channel .metadata {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing) 0;
+}
+
+.maintitle .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin-right: var(--spacing-small);
+}
+
+.maintitle .channel .metadata .id-contents{
+  display: flex;
+  flex-direction: column;
+}
+
+.maintitle .channel .metadata .id-contents h2 {
+  font-size: var(--font-medium);
+}
+
+.maintitle .channel .metadata .subscribers {
+  color: var(--grey-dark-color);
+  font-size: var(--font-small);
+}
+
+.maintitle .channel button {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+}
+
+/* Up next */
+.upNext {
+  padding: 0 var(--spacing);
+}
+
+.upNext .upnext__text {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+  padding: var(--spacing-small) 0;
+}
+
+.upNext .nextvideo {
+  display: flex;
+  margin-top: var(--spacing);
+}
+
+.upNext .nextvideo .img {
+  flex-basis: 35%;
+  padding-right: var(--spacing);
+}
+
+.upNext .nextvideo .img img {
+  width: 100%;
+}
+
+.upNext .nextvideo .nextInfo {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.upNext .nextvideo .nextInfo h2 {
+  font-size: var(--font-small);
+  line-height: 18px;
+}
+
+.upNext .nextvideo .nextInfo h3 {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+  padding-top: var(--spacing-small);
+}
+
+.upNext .nextvideo .nextInfo .views {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+.upNext .nextvideo .moreBtn {
+  flex-basis: 5%;
+  height: 100%;
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+} 이거를 놓쳐서 한시간동안 헤맸네.. */
+
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--spacing);
+    
+}
+
+/* @media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--spacing);
+  }
+
+  .infoAndUpNext .metadata {
+    flex-basis: 30%;
+    width: 100%;
+    margin-right: var(--spacing);
+  }
+
+  .infoAndUpNext .upNext {
+    flex-basis: 70%;
+    width: 100%;
+  }
+} */

@@ -1,0 +1,23 @@
+.alert-box {
+  background: rgb(212, 236, 103);
+  color: rgb(20, 20, 18);
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+.id,
+.pw {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.idText,
+.pwText {
+  background: rgb(82, 199, 245);
+  color: rgb(20, 20, 18);
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: none;
+  width: 60%;
+}

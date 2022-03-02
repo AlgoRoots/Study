@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+</body> 
+
+<style>
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: blue;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+
+}
+</style>
+
+<script>
+
+
+
+    document.getElementsByClassName('btn-danger')[0].addEventListener( 'click' , function(){
+    //$('.btn-danger').click(function(){
+        $.ajax({
+            url : 'https://codingapple1.github.io/hello.txt',
+            type : 'GET'
+        }).done(function(data){
+            //console.log(data)
+            document.getElementById('hello').innerHTML = (data);
+            //$('#hello').html(data);
+        })
+    })
+
+
+    document.getElementsByClassName('product-btn')[0].addEventListener( 'click' , function(){
+
+        $.ajax({
+            url : 'https://codingapple1.github.io/data.json',
+            type : 'GET'
+        }).done(function(data){
+            console.log(data)
+            document.getElementById('model').innerHTML = (data.model);
+            document.getElementById('price').innerHTML = (data.price);
+            document.getElementById('brand').innerHTML = (data.brand);
+            document.getElementById('img').src = (data.img);
+
+            // Jquery
+            // $('.btn-danger').click(function () {
+            //     $.ajax({
+            //         url: 'https://codingapple1.github.io/data.json',
+            //         type: 'GET'
+            //     }).done(function (data) {
+            //         $('.brand').html(data.brand);
+            //         $('.model').html(data.model);
+            //         $('.price').html(data.price);
+            //         $('.img').attr('src', data.img);
+            //     });
+            // });
+        })
+    })
+
+</script>
+</html>

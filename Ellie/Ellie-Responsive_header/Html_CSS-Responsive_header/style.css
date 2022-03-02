@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7b8770;
+  padding: 8px 18px;
+}
+
+.navbar_logo {
+  font-size: 25px;
+  color: #ebe359;
+  font-weight: 700;
+}
+
+.navbar_menu {
+  font-weight: 400;
+  display: flex;
+  padding-left: 0;
+}
+
+.navbar_menu li {
+  padding: 8px 14px;
+  list-style: none;
+}
+
+.navbar_menu li:hover {
+  background-color: #ebe359;
+  border-radius: 4px;
+}
+
+.navbar_sns {
+  display: flex;
+}
+
+.navbar_sns li {
+  padding: 8px 15px;
+  list-style: none;
+}
+
+.navbar_toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: #ebe359;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 9px 24px;
+    justify-content: space-between;
+  }
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar_sns {
+    display: none;
+    padding: 0;
+    margin-bottom: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar_toggleBtn {
+    display: block;
+  }
+
+  .navbar_menu.active,
+  .navbar_sns.active {
+    display: flex;
+  }
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- Products -->
+
+        <!-- sort By  -->
+        <div class="category">
+            <div class="sortByBox category-box">
+                <p class="sortBy-title category_title">Sort By </p>
+                <ul class="sortBy-list category_list">
+                    <li>
+                        <button class="sortBy-PriceLow">Price: low to high</button>
+                    </li>
+                    <li>
+                        <button class="sortBy-PriceHigh">Price: high to low</button>
+                    </li>
+
+                    <li>
+                        <button class="sortBy-AZ">A to Z</button>
+                    </li>
+                    <li>
+                        <button class="sortBy-ZA">Z to A</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="filterBox category-box">
+                <p class="filter-title category_title">Filter By</p>
+                <ul class="filter-list category_list">
+                    <li>
+                        <button id= "price_all" class="filterby_price_all">All</button>
+                    </li>
+                    <li>
+                        <button class="filterby_price_under20">Up to $20</button>
+                    </li>
+                    <li>
+                        <button id= "price_20to40"class="filterby_price_20to40">$20 ~ $40</button>
+                    </li>
+
+                    <li>
+                        <button id= "price_over40" class="filterby_price_over40">Over $40</button>
+                    </li>
+
+                </ul>
+            </div>
+            
+        </div>
+
+        
+        <!-- Product list -->
+        <div class="products-group container">
+            <!-- <div class="products">
+                <img src="https://via.placeholder.com/600">
+                <div class="products-body">
+                    <h5 class="product-title"></h5>
+                    <p> <span class="PDSpan"></span> </p>
+                    <button class="product-btn btn-danger">Order</button>
+                </div>
+            </div>
+            <div class="products">
+                <img src="https://via.placeholder.com/600">
+                <div class="products-body">
+                    <h5 class="product-title"></h5>
+                    <p> <span class="PDSpan"></span> </p>
+                    <button class="product-btn btn-danger">Order</button>
+                </div>
+            </div>
+            <div class="products">
+                <img src="https://via.placeholder.com/600">
+                <div class="products-body">
+                    <h5 class="product-title"></h5>
+                    <p> <span class="PDSpan"></span> </p>
+                    <button class="product-btn btn-danger">Order</button>
+                </div>
+            </div> -->
+        </div>
+    <script>
+
+
+// Product lists - 데이터바인딩으로 값 집어넣기
+
+
+    let products = [
+        {
+            id: 0,
+            price: 45,
+            title: 'aZoik plus Sparkling Water'
+        },
+
+        {
+            id: 1,
+            price: 15,
+            title: 'sZoik Sparkling Water'
+        },
+
+        {
+            id: 2,
+            price: 30,
+            title: 'cZoik Lignt Sparkling Water'
+        },
+
+        {
+            id: 3,
+            price: 10,
+            title: 'dZoik Lignt Sparkling Water'
+        },
+
+        {
+            id: 4,
+            price: 35,
+            title: 'fZoik Lignt Sparkling Water'
+        }
+
+    ];
+
+
+
+    const ProductTitle = document.getElementsByClassName('product-title');
+    const ProductSpan = document.getElementsByClassName('PDSpan');
+
+    // ProductTitle[0].innerHTML = products[0].title;
+    // // $('.title').eq(0).html(product[0].title);
+    // ProductSpan[0].textContent = ('Price: ' + products[0].price);
+
+
+    const sortBy = document.getElementsByClassName('container')[0];
+    const sortByBtnPriceLow = document.getElementsByClassName('sortBy-PriceLow')[0];
+    const sortByBtnPricehigh = document.getElementsByClassName('sortBy-PriceHigh')[0];
+    const sortByBtnAZ = document.getElementsByClassName('sortBy-AZ')[0];
+    const sortByBtnZA = document.getElementsByClassName('sortBy-ZA')[0];
+    const ProductsGroup = document.getElementsByClassName('products-group')[0];
+
+    const filterByALL = document.getElementsByClassName('filterby_price_all')[0];
+    const filterByBtnUpto20 = document.getElementsByClassName('filterby_price_under20')[0];
+    const filterByBtn20to40 = document.getElementsByClassName('filterby_price_20to40')[0];
+    const filterByBtnOver40 = document.getElementsByClassName('filterby_price_over40')[0];
+
+
+
+
+    // // for문으로 자스에있는 상품값 대입하기
+    //  for (let i = 0; i < products.length; i++){
+    //     document.querySelectorAll('product-title')[i].textContent = products[i].title;
+    //     document.querySelectorAll('PDSpan')[i].textContent  = ('Price: $' + products[i].price);
+    //  }
+    
+
+    products.forEach(function (a) {
+        let template = `
+        <div class="products">
+            <img src="https://via.placeholder.com/600">
+            <div class="products-body">
+                <h5 class="product-title">${a.title}</h5>
+                <p> <span class="PDSpan">Price: $ ${a.price}</span> </p>
+                <button class="product-btn btn-danger">Order</button>
+            </div>
+        </div>
+        `;
+        ProductsGroup.insertAdjacentHTML("beforeend", template);
+    })
+
+
+    // Filter by Price
+
+    // 버튼을 누르면 products에서 %20이하 상품만 나오도록 만들자. 
+
+
+
+    // ALL 
+
+    filterByALL.addEventListener('click', function () {
+        ProductsGroup.innerHTML = '';
+        const NEWProducts = products.filter(a => a.price);
+
+        NEWProducts.forEach(function (a) {
+            let template = `
+            <div class="products">
+                <img src="https://via.placeholder.com/600">
+                <div class="products-body">
+                    <h5 class="product-title">${a.title}</h5>
+                    <p> <span class="PDSpan">Price: $ ${a.price}</span> </p>
+                    <button class="product-btn btn-danger">Order</button>
+                </div>
+            </div>
+            `;
+            ProductsGroup.insertAdjacentHTML("beforeend", template);
+        })
+    })
+
+
+
+    // less than 20 products - Javascripts
+
+    filterByBtnUpto20.addEventListener('click', function () {
+        ProductsGroup.innerHTML = '';
+        const NEWProducts = products.filter(function (a) {
+            return a.price <= 20
+        })
+
+        NEWProducts.forEach(function (a) {
+            let template = `
+            <div class="products">
+                <img src="https://via.placeholder.com/600">
+                <div class="products-body">
+                    <h5 class="product-title">${a.title}</h5>
+                    <p> <span class="PDSpan">Price: $ ${a.price}</span> </p>
+                    <button class="product-btn btn-danger">Order</button>
+                </div>
+            </div>
+            `;
+            ProductsGroup.insertAdjacentHTML("beforeend", template);
+        })
+    })
+
+
+    // 20 to 40 - jQuery
+    $('#price_20to40').click(function () {
+        ProductsGroup.innerHTML = '';
+
+        const NEWProducts = products.filter(a => 20 < a.price && a.price < 40);
+        console.log(NEWProducts);
+
+        NEWProducts.forEach(function (a) {
+            let template = `
+            <div class="products">
+                <img src="https://via.placeholder.com/600">
+                <div class="products-body">
+                    <h5 class="product-title">${a.title}</h5>
+                    <p> <span class="PDSpan">Price: $ ${a.price}</span> </p>
+                    <button class="product-btn btn-danger">Order</button>
+                </div>
+            </div>
+            `;
+            ProductsGroup.insertAdjacentHTML("beforeend", template);
+        })
+    })
+
+
+    // over 40 - jQuery
+    $('#price_over40').click(function () {
+        ProductsGroup.innerHTML = '';
+
+        const NEWProducts = products.filter(function (a) {
+            return 40 < a.price
+        });
+
+
+        NEWProducts.forEach(function (a) {
+            let template = `
+            <div class="products">
+                <img src="https://via.placeholder.com/600">
+                <div class="products-body">
+                    <h5 class="product-title">${a.title}</h5>
+                    <p> <span class="PDSpan">Price: $ ${a.price}</span> </p>
+                    <button class="product-btn btn-danger">Order</button>
+                </div>
+            </div>
+            `;
+            ProductsGroup.insertAdjacentHTML("beforeend", template);
+        })
+    })
+
+
+    // Price 
+    sortByBtnPriceLow.addEventListener('click', function () {
+
+        products.sort(function (a, b) {
+            return a.price - b.price
+        })
+
+
+        // 함수만 정렬하는게 아닌, 데이터바인딩 과정을 해야 상품이 가격순으로 정렬된다. 
+        for (let i = 0; i < 5; i++) {
+            ProductTitle[i].innerHTML = products[i].title;
+            ProductSpan[i].textContent = ('Price: $ ' + products[i].price);
+        }
+    })
+
+    sortByBtnPricehigh.addEventListener('click', function () {
+        products.sort(function (a, b) {
+            return b.price - a.price
+        })
+
+        for (let i = 0; i < 5; i++) {
+            ProductTitle[i].innerHTML = products[i].title;
+            ProductSpan[i].textContent = ('Price: $ ' + products[i].price);
+        }
+    })
+
+    // A to Z
+    sortByBtnAZ.addEventListener('click', function () {
+
+        products.sort(function (a, b) {
+            if (a.title < b.title == true) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+        for (let i = 0; i < 5; i++) {
+            ProductTitle[i].innerHTML = products[i].title;
+            ProductSpan[i].textContent = ('Price: $ ' + products[i].price);
+        }
+    })
+
+    // Z to A
+    sortByBtnZA.addEventListener('click', function () {
+
+        products.sort(function (a, b) {
+            if (a.title < b.title == false) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
+        for (let i = 0; i < 5; i++) {
+            ProductTitle[i].innerHTML = products[i].title;
+            ProductSpan[i].textContent = ('Price: $ ' + products[i].price);
+        }
+    })
+
+</script>
+
+
+</body>
+
+</html>

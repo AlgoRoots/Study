@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- // CDN으로 설치 body 태그 밑에.. -->
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <h4 id="test">안녕하세요</h4
+
+    <p class="hi">안녕하세요</p>
+
+    <button class="btn">button</button>
+    <button class="btn">button</button>
+    <button class="btn">button</button>
+    <script>
+
+        // document.querySelector('#test')
+        // querySelector은 하나만 찾아준다 다 찾아주려면 querySelectorAll
+        // document.getElementById().innerHTML = '???';
+        $('#test').html('안녕'); 
+        $('#test').css('color', 'red'); 
+        $('#test').attr('src', 'dsddd.jpg');
+        $('#test').addClass('yellow-bg');
+        
+        // document.getElementsByClassName('btn')[0].addEventListener('alert');
+        // $('.btn').on('click' , 'h4', function()){
+        //     alert
+        // };
+        
+            // button 누르면 글자 사라지는 법 js
+        // document.getElementsByClassName('btn')[0].addEventListener('click', function(){
+        //     document.getElementsByClassName('hi')[0].style.display = 'none'       
+        //  });
+
+         // jquery 로 했을 때
+         $('.btn').on('click', function(){
+             $('.hi').hide();
+         })
+        
+        // $('.test1')
+    </script>
+
+
+
+
+
+
+</body>
+</html>

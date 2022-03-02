@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="alert-box" id="alert">
+        <p class="title" id="title">Alert Box</p>
+        <button onclick="closeAlert">Close</button>
+    </div>
+    <button onclick="alert1('아이디를 입력하세요.')">Button</button>
+    <button onclick="alert1('비밀번호를 입력하세요.')">Button</button>
+    
+
+
+    <script>
+
+        //  parameter : 비슷한 함수를 따로 쓸 필요가 없다. 
+        function alert1(popup){
+            document.getElementById('title').innerHTML = popup;
+            document.getElementById('alert').style.display= 'block';
+        }
+
+
+        function closeAlert(){
+            document.getElementById('alert').style.display = 'none';
+        }
+
+        // function alert2(){
+        //     document.getElementById('title').innerHTML  = '비밀번호를 입력하세요.';
+        //     document.getElementById('alert').style.display= 'block';
+        // }
+
+
+
+        function plus(A , B){
+            A + B
+        }
+
+        plus(1,2);
+        plus(2,3);
+    </script>
+</body>
+</html>
