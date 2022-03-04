@@ -14,24 +14,36 @@ function App() {
   const onSubmit = (event) => {
     event.preventDefault();
   };
+  const [amount, setAmount] = useState("");
+  const onChange = (event) => {
+    setAmount(event.target.value);
+  };
   return (
     <div>
       <h1>The Coins! {loading ? "" : `(${coins.length})`}</h1>
       {loading ? (
         <strong>Loading...</strong>
       ) : (
-        <select>
-          {coins.map((coin) => (
-            <option>
-              {coin.name} ({coin.symbol}) {coin.quotes.USD.price}
-            </option>
-          ))}
-        </select>
+        <div>
+          <select>
+            {coins.map((coin, id) => (
+              <option key={coin.id}>
+                {coin.name} ({coin.symbol}) {coin.quotes.USD.price}
+              </option>
+            ))}
+          </select>
+          <form onSubmit={onSubmit}>
+            <input
+              value={amount}
+              onChange={onChange}
+              type="number"
+              placeholder="type amount"
+            />
+          </form>
+          <h3>{amount}</h3>
+        </div>
       )}
-      <form onSubmit={onSubmit}>
-        <input  type="number" placeholder="type amount" />
-      </form>
-    </div
+    </div>
   );
 }
 
