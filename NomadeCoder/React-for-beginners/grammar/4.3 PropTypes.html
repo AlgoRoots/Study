@@ -39,12 +39,20 @@
     };
     const MemorizedBtn = React.memo(Btn);
     function App() {
-      const [value, setValue] = React.useState("Save Changes");
-      const changeValue = () => setValue("Revert Changes");
+      const [value, setValue] = React.useState("Continue");
+      const changeValue = () => setValue("Stop continue");
+      const [inverted, setInverted] = React.useState(false);
+      const onInvert = () => {
+        setInverted((current) => !current);
+      };
       return (
         <div>
-          <MemorizedBtn text={value} onClick={changeValue} fontSize={18} />
-          <MemorizedBtn text={"Continue"} />
+          <MemorizedBtn
+            text={inverted ? "Turn back" : "Invert"}
+            onClick={onInvert}
+            fontSize={18}
+          />
+          <MemorizedBtn text={value} onClick={changeValue} />
         </div>
       );
     }
