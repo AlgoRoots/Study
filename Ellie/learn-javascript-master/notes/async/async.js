@@ -46,7 +46,7 @@ async function getBanana() {
 
 // 프로미스 체이닝을 통했다면 ?
 // function getBanana() {
-//   return delay(3000).then((🍌) => "");
+//   return delay(3000).then(() => "🍌");
 // }
 
 // 과일들을 받아오는 함수
@@ -64,8 +64,8 @@ async function getBanana() {
 // async를 사용하면 간결해진다. 하지만 이 코드도 apple이 나나와 사과를 받는 일은 서로 연관이 없으므로
 // 병렬적으로 실행해줄 필요가 있다.
 // async function pickFruits() {
-// const applePromise = getApple(); // 2초
-// const bananaPromise = getBanana(); //1초  총 3초걸림
+// const apple = await applePromise; // 2초
+// const banana = await bananaPromise; //1초  총 3초걸림
 //   return `${apple} + ${banana}`;
 // }
 
@@ -97,7 +97,7 @@ function pickAllFruits() {
 pickAllFruits().then(console.log);
 
 // 어떤 것이든 상관없고 제일 첫 번째 과일을 받아오고 싶다면 ?
-// Promise.race api는 배열에 전달 된 프로미스 중에서 가장 먼저 값을 리턴하는 과일만 전달된다.
+// Promise.race api는 배열에 전달 된 프로미스 중에서 가장 먼저 값을 리턴하는 과일만 전달된다. > 바나나 출력
 function pickOnlyOne() {
   return Promise.race([getApple(), getBanana()]);
 }
