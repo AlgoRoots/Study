@@ -93,6 +93,7 @@
         });
 
         function listing() {
+
             $.ajax({
                 type: 'GET',
                 url: '/movie',
@@ -105,6 +106,7 @@
                         let image = rows[i]['image']
                         let star = rows[i]['star']
                         let title = rows[i]['title']
+                        let 세부정보 =
 
                         let star_image = '⭐'.repeat(star)
                         let temp = `<div class="col">
