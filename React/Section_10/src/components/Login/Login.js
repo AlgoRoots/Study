@@ -14,7 +14,6 @@ const Login = (props) => {
   useEffect(() => {
     console.log("EFFECT RUNNING");
     return () => {
-      // 컴포넌트가 제거될 때 한번 실행 > 디펜던시에 아무것도 없어서
       console.log("effect cleanup");
     };
   }, []);
