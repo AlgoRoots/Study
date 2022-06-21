@@ -28,4 +28,9 @@
   kellyName = "name";
   type JSON = "json";
   const json: JSON = "json";
+
+  type Boal = true;
+  // const isCat: Boal = false; > error
+
+  // 쓰는 이유 Union
 }
