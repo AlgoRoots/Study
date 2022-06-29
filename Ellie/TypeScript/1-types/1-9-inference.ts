@@ -14,13 +14,13 @@ function print(msg: "hello") {
 }
 print("hello");
 
-function add(x: number, y: number): number {
+function addNum(x: number, y: number): number {
   // 결과 값이 숫자라고 추론됨
   return x + y;
 }
 
 // 이 때 result는 number type으로 자동지정된다.
-const result = add(1, 2);
+const result = addNum(1, 2);
 
 // 타입 추론이 좋은 것은 아니다.
 // 예제는 간단하지만  보통 프로젝트 코드를 작성할 때는 복잡하기 때문에 왠만하면 타입을 정확하게 명시하는 것이 좋다.
