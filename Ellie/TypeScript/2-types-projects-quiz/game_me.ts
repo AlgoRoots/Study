@@ -2,33 +2,33 @@
  * Let's make a game 🕹
  */
 
-let position: { x: number; y: number } = {
+let positionMe: { x: number; y: number } = {
   x: 0,
   y: 0,
 };
 
-console.log(position); // { x: 0, y: 0}
-move_me("up");
-console.log(position); // { x: 0, y: 1}
-move_me("down");
-console.log(position); // { x: 0, y: 0}
-move_me("left");
-console.log(position); // { x: -1, y: 0}
-move_me("right");
-console.log(position); // { x: 0, y: 0}
+console.log(positionMe); // { x: 0, y: 0}
+moveMe("up");
+console.log(positionMe); // { x: 0, y: 1}
+moveMe("down");
+console.log(positionMe); // { x: 0, y: 0}
+moveMe("left");
+console.log(positionMe); // { x: -1, y: 0}
+moveMe("right");
+console.log(positionMe); // { x: 0, y: 0}
 
-type Direction = "up" | "down" | "left" | "right";
+type DirectionMe = "up" | "down" | "left" | "right";
 
-function move_me(direction: Direction) {
+function moveMe(direction: DirectionMe) {
   switch (direction) {
     case "up":
-      return position.y++;
+      return positionMe.y++;
     case "down":
-      return position.y--;
+      return positionMe.y--;
     case "left":
-      return position.x--;
+      return positionMe.x--;
     case "right":
-      return position.x++;
+      return positionMe.x++;
     default:
       throw Error("unknown direction");
   }
