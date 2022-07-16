@@ -9,7 +9,7 @@
   들을 숨기는 테크닉
 
   추상화 : 여러 클래스에 걸쳐 공통적으로 사용되는 함수들의 규격을 정의함
-
+  interface
   */
   type CoffeeCup = {
     shots: number;

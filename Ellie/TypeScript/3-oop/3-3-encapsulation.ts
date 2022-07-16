@@ -84,5 +84,6 @@
   const user = new User("Steve", "Jobs");
   user.age = 6;
   console.log(user.fullName);
+
   console.log(user.fullName);
 }
