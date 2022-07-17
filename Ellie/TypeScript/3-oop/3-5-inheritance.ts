@@ -1,4 +1,11 @@
 {
+
+  /*
+  상속을 통해 공통된 기능을 재사용하며 자식클래스에서만 사용할 수 있는 기능을 추가할 수 있으며
+  super.을 통해 부모클래스에 있는 함수를 호출, 접근 할 수 있다. 
+
+  만약 자식 클래스에서 또다른 데이터를 생성자에서 받아올 수 있다면
+  */
   type CoffeeCup = {
     shots: number;
     hasMilk: boolean;
@@ -8,17 +15,14 @@
     makeCoffee(shots: number): CoffeeCup;
   }
 
-  interface CommercialCoffeeMaker {
-    makeCoffee(shots: number): CoffeeCup;
-    fillCoffeeBeans(beans: number): void;
-    clean(): void;
-  }
 
-  class CoffeeMachine implements CoffeeMaker, CommercialCoffeeMaker {
+
+
+  class CoffeeMachine implements CoffeeMaker {
     private static BEANS_GRAMM_PER_SHOT: number = 7; // class level
     private coffeeBeans: number = 0; // instance (object) level
 
-    private constructor(coffeeBeans: number) {
+    constructor(coffeeBeans: number) {
       this.coffeeBeans = coffeeBeans;
     }
 
@@ -64,26 +68,32 @@
     }
   }
 
-  class AmateurUser {
-    constructor(private machine: CoffeeMaker) {}
-    makeCoffee() {
-      const coffee = this.machine.makeCoffee(2);
-      console.log(coffee);
+  class CaffeLatteMachine extends CoffeeMachine {
+    constructor(coffeeBeans: number, public readonly serialNumber: string) {
+      // 자식 클래스에서 생성자를 따로 구현하는 경우는 부모의 생성자도 호출해야한다. 
+      super(coffeeBeans)
+    }
+    // 자식에만 있는 함수 steamMilk()
+    private steamMilk(): void {
+      console.log('Steaming some milk...')
+    }
+    makeCoffee(shots: number): CoffeeCup {
+      // 상속한 부모함수 호출 가능 super
+      const coffee = super.makeCoffee(shots);
+      this.steamMilk();
+      return {
+        shots,
+        hasMilk: true,
+      }
+      
     }
   }
-
-  class ProBarista {
-    constructor(private machine: CommercialCoffeeMaker) {}
-    makeCoffee() {
-      const coffee = this.machine.makeCoffee(2);
-      console.log(coffee);
-      this.machine.fillCoffeeBeans(45);
-      this.machine.clean();
-    }
-  }
-
   const maker: CoffeeMachine = CoffeeMachine.makeMachine(32);
-  const amateur = new AmateurUser(maker);
-  const pro = new ProBarista(maker);
-  pro.makeCoffee();
+
+  const machine = new CoffeeMachine(23);
+  const latteeMachine = new CaffeLatteMachine(23, 'SSSS');
+  const coffee = latteeMachine.makeCoffee(1);
+  console.log('coffee', coffee)
+  console.log(latteeMachine.serialNumber)
+
 }
