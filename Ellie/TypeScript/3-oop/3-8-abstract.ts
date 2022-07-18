@@ -3,6 +3,9 @@
   abstract 
   어떤 상속 클래스를 이용할 때 무언가 반복되는 절차가 있고, 어떤 특정기능만 자식클래스에서 행동이달라질 때 쓸 수 있다. 
   abstract class 
+
+  interface === 규격사항
+  abstract class === 규격사항 + 필수기능구현
   */
   
   type CoffeeCup = {
