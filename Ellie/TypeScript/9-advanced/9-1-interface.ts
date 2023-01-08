@@ -60,3 +60,16 @@ type NumberType = number;
 type Direction = "left" | "right"; // Union type ... interface로는 구현 불가능.
 
 // 업데이트 될 수 있어 달라질 수 있습니다.
+
+// interface: 어떤 것의 규격사항
+// 특정한 규격을 정의하는 것이라면 그 규격을 통해서 어떤 것이 구현된다면 interface를 쓰는 것이 더 정확하다.
+
+// Types : 어떠한 데이터를 담을 수 있을지 데이터의 모습(타입)을 정할 수 있는 것!
+// 데이터의 특정 타입을 정할 때 타입선언을 한다.
+type PositionType1 = {
+  x: number;
+  y: number;
+};
+
+const pos: PositionType1 = { x: 0, y: 0 };
+// printPosition(pos);
