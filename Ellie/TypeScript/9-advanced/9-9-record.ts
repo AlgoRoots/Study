@@ -9,3 +9,5 @@ const nav: Record<Page, PageInfo> = {
   about: { title: "About" },
   contact: { title: "Contact" },
 };
+
+// type NewProduct = Capitalize<Product>; // 'Cat' | 'Dog'
